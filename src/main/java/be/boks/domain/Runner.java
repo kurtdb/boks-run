@@ -28,18 +28,16 @@ public class Runner {
 	
 	private String runningClub;
 	
-	private List<Category> category;
+	private List<Category> categories;
 	
 	private String emailAddress;
 	
 	private Gender gender;
 	
+	private List<Time> times;
+	
 	public Long getId() {
 		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
 	}
 	
 	public String getFirstName() {
@@ -106,12 +104,12 @@ public class Runner {
 		this.runningClub = runningClub;
 	}
 	
-	public List<Category> getCategory() {
-		return category;
+	public List<Category> getCategories() {
+		return categories;
 	}
 	
-	public void setCategory(List<Category> category) {
-		this.category = category;
+	public void setCategories(List<Category> category) {
+		this.categories = category;
 	}
 
 	public String getEmailAddress() {
@@ -130,11 +128,19 @@ public class Runner {
 		this.gender = gender;
 	}
 
+	public List<Time> getTimes() {
+		return times;
+	}
+
+	public void setTimes(List<Time> times) {
+		this.times = times;
+	}
+
 	@Override
 	public int hashCode() {
 		HashCodeBuilder builder = new HashCodeBuilder();
 		builder.append(this.address);
-		builder.append(this.category);
+		builder.append(this.categories);
 		builder.append(this.city);
 		builder.append(this.dateOfBirth);
 		builder.append(this.emailAddress);
@@ -144,6 +150,7 @@ public class Runner {
 		builder.append(this.lastName);
 		builder.append(this.postalCode);
 		builder.append(this.runningClub);
+		builder.append(this.times);
 		return builder.toHashCode();
 	}
 
@@ -153,7 +160,7 @@ public class Runner {
 			EqualsBuilder builder = new EqualsBuilder();
 			Runner runner = (Runner) obj;
 			builder.append(this.address, runner.address);
-			builder.append(this.category, runner.category);
+			builder.append(this.categories, runner.categories);
 			builder.append(this.city, runner.city);
 			builder.append(this.dateOfBirth, runner.dateOfBirth);
 			builder.append(this.emailAddress, runner.emailAddress);
@@ -162,7 +169,8 @@ public class Runner {
 			builder.append(this.gender, runner.gender);
 			builder.append(this.lastName, runner.lastName);
 			builder.append(this.postalCode, runner.postalCode);
-			builder.append(this.runningClub, runner.runningClub);			
+			builder.append(this.runningClub, runner.runningClub);
+			builder.append(this.times, runner.times);
 			return builder.isEquals();
 		}
 		return false;
@@ -172,7 +180,7 @@ public class Runner {
 	public String toString() {
 		ToStringBuilder builder = new ToStringBuilder(this);
 		builder.append("address", this.address);
-		builder.append("category", this.category);
+		builder.append("category", this.categories);
 		builder.append("city", this.city);
 		builder.append("dateOfBirth", this.dateOfBirth);
 		builder.append("emailAddress", this.emailAddress);
@@ -181,7 +189,8 @@ public class Runner {
 		builder.append("gender", this.gender);
 		builder.append("lastName", this.lastName);
 		builder.append("postalCode", this.postalCode);
-		builder.append("runningClub", this.runningClub);		
+		builder.append("runningClub", this.runningClub);
+		builder.append("times", this.times);
 		return builder.toString();
 	}
 }
