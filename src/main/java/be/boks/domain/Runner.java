@@ -1,6 +1,7 @@
 package be.boks.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -27,7 +28,7 @@ public class Runner {
 	
 	private String runningClub;
 	
-	private Category category;
+	private List<Category> category;
 	
 	private String emailAddress;
 	
@@ -105,11 +106,11 @@ public class Runner {
 		this.runningClub = runningClub;
 	}
 	
-	public Category getCategory() {
+	public List<Category> getCategory() {
 		return category;
 	}
 	
-	public void setCategory(Category category) {
+	public void setCategory(List<Category> category) {
 		this.category = category;
 	}
 
