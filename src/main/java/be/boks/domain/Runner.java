@@ -2,6 +2,9 @@ package be.boks.domain;
 
 import java.time.LocalDate;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.data.annotation.Id;
 
 public class Runner {
@@ -25,6 +28,10 @@ public class Runner {
 	private String runningClub;
 	
 	private Category category;
+	
+	private String emailAddress;
+	
+	private Gender gender;
 	
 	public Long getId() {
 		return id;
@@ -104,5 +111,76 @@ public class Runner {
 	
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	@Override
+	public int hashCode() {
+		HashCodeBuilder builder = new HashCodeBuilder();
+		builder.append(this.address);
+		builder.append(this.category);
+		builder.append(this.city);
+		builder.append(this.dateOfBirth);
+		builder.append(this.emailAddress);
+		builder.append(this.entryDate);
+		builder.append(this.firstName);
+		builder.append(this.gender);
+		builder.append(this.lastName);
+		builder.append(this.postalCode);
+		builder.append(this.runningClub);
+		return builder.toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Runner) {
+			EqualsBuilder builder = new EqualsBuilder();
+			Runner runner = (Runner) obj;
+			builder.append(this.address, runner.address);
+			builder.append(this.category, runner.category);
+			builder.append(this.city, runner.city);
+			builder.append(this.dateOfBirth, runner.dateOfBirth);
+			builder.append(this.emailAddress, runner.emailAddress);
+			builder.append(this.entryDate, runner.entryDate);
+			builder.append(this.firstName, runner.firstName);
+			builder.append(this.gender, runner.gender);
+			builder.append(this.lastName, runner.lastName);
+			builder.append(this.postalCode, runner.postalCode);
+			builder.append(this.runningClub, runner.runningClub);			
+			return builder.isEquals();
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		ToStringBuilder builder = new ToStringBuilder(this);
+		builder.append("address", this.address);
+		builder.append("category", this.category);
+		builder.append("city", this.city);
+		builder.append("dateOfBirth", this.dateOfBirth);
+		builder.append("emailAddress", this.emailAddress);
+		builder.append("entryDate", this.entryDate);
+		builder.append("firstName", this.firstName);
+		builder.append("gender", this.gender);
+		builder.append("lastName", this.lastName);
+		builder.append("postalCode", this.postalCode);
+		builder.append("runningClub", this.runningClub);		
+		return builder.toString();
 	}
 }

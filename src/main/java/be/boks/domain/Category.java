@@ -3,6 +3,7 @@ package be.boks.domain;
 public enum Category {
 	CHILD("kind"),
 	WHEELCHAIR("rolstoel"),
+	SPORTS_WHEELCHAIR("sport rolstoel"),
 	SICK("ziek"),
 	ADULT("volwassene");
 	
