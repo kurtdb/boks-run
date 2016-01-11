@@ -16,7 +16,7 @@ public class Runner {
 	
 	private String lastName;
 	
-	private LocalDate dateOfBirth;
+	private Integer age;
 	
 	private LocalDate entryDate;
 	
@@ -56,14 +56,14 @@ public class Runner {
 		this.lastName = lastName;
 	}
 	
-	public LocalDate getDateOfBirth() {
-		return dateOfBirth;
+	public Integer getAge() {
+		return age;
 	}
-	
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
-	
+
 	public LocalDate getEntryDate() {
 		return entryDate;
 	}
@@ -142,7 +142,7 @@ public class Runner {
 		builder.append(this.address);
 		builder.append(this.categories);
 		builder.append(this.city);
-		builder.append(this.dateOfBirth);
+		builder.append(this.age);
 		builder.append(this.emailAddress);
 		builder.append(this.entryDate);
 		builder.append(this.firstName);
@@ -162,7 +162,7 @@ public class Runner {
 			builder.append(this.address, runner.address);
 			builder.append(this.categories, runner.categories);
 			builder.append(this.city, runner.city);
-			builder.append(this.dateOfBirth, runner.dateOfBirth);
+			builder.append(this.age, runner.age);
 			builder.append(this.emailAddress, runner.emailAddress);
 			builder.append(this.entryDate, runner.entryDate);
 			builder.append(this.firstName, runner.firstName);
@@ -182,7 +182,7 @@ public class Runner {
 		builder.append("address", this.address);
 		builder.append("category", this.categories);
 		builder.append("city", this.city);
-		builder.append("dateOfBirth", this.dateOfBirth);
+		builder.append("dateOfBirth", this.age);
 		builder.append("emailAddress", this.emailAddress);
 		builder.append("entryDate", this.entryDate);
 		builder.append("firstName", this.firstName);
