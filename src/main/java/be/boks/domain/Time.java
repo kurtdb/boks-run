@@ -14,6 +14,8 @@ public class Time {
 	
 	private Category category;
 	
+	private String type = "time";
+	
 	public Long getId() {
 		return id;
 	}
@@ -41,6 +43,13 @@ public class Time {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 	
 }

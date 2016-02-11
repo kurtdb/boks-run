@@ -1,5 +1,6 @@
 package be.boks.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -8,7 +9,10 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.data.annotation.Id;
 
-public class Runner {
+public class Runner implements Serializable {
+	
+	private static final long serialVersionUID = 2530453437671327658L;
+
 	@Id
 	private Long id;
 	
@@ -26,7 +30,7 @@ public class Runner {
 	
 	private String city;
 	
-	private String runningClub;
+	private Club runningClub;
 	
 	private List<Category> categories;
 	
@@ -35,6 +39,8 @@ public class Runner {
 	private Gender gender;
 	
 	private List<Time> times;
+	
+	private String type = "runner";
 	
 	public Long getId() {
 		return id;
@@ -96,11 +102,11 @@ public class Runner {
 		this.city = city;
 	}
 	
-	public String getRunningClub() {
+	public Club getRunningClub() {
 		return runningClub;
 	}
 	
-	public void setRunningClub(String runningClub) {
+	public void setRunningClub(Club runningClub) {
 		this.runningClub = runningClub;
 	}
 	
@@ -134,6 +140,14 @@ public class Runner {
 
 	public void setTimes(List<Time> times) {
 		this.times = times;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override

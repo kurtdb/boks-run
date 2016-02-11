@@ -1,0 +1,8 @@
+---
+applications:
+  - name: boks-run
+    memory: 320MB
+    instances: 1
+    path: target/run-0.0.1-SNAPSHOT.jar
+services:
+   - boks-run-cloudant

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import be.boks.domain.Runner;
-import be.boks.repository.RunnerRepository;
+import be.boks.service.RunnerService;
 
 @RestController
 @RequestMapping("/loper")
@@ -22,18 +22,18 @@ public class RunnerController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RunnerController.class);
 	
 	@Autowired
-	private RunnerRepository runnerRepository;
+	private RunnerService runnerService;
 	
-	
+	@RequestMapping(method=RequestMethod.GET)
 	public List<Runner> getAll() {
 		LOGGER.info("Getting all the runners");
-		return runnerRepository.findAll();
+		return runnerService.getAll();
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, path="/registreer")
 	public void register(@Valid @RequestBody Runner runner) {
 		LOGGER.info("Saving runner: " +runner);
-		//Runner saved = runnerRepository.insert(runner);
-		//LOGGER.info("Saved runner: " + saved);
+		Runner saved = runnerService.insert(runner);
+		LOGGER.info("Saved runner: " + saved);
 	}
 }
