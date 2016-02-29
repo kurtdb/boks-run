@@ -9,15 +9,83 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body data-ng-app="runnerApp">
-	<div data-ng-view="">
-	</div>	
+	<div class="container-fluid content" ng-controller="RunnerController">
+		<div class="row">
+			<div class="col-md-12">
+				<img src="img/header.png" alt="boks run header" class="img-responsive center-block" />
+				<div class="text-center">26 juni 2016</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="links">
+					<div class="runs">
+						<img src="img/runner.png"> Runs
+					</div>
+					<div class="runCategory">
+						13.00 u.: Kids Run 1 <span class="price">(&euro; 2)</span><br>
+							<span class="extrainfo informatief">(geb. 2007-2010)</span>
+					</div>
+					<div class="runCategory">
+						13.20 u.: Kids Run 2 <span class="price">(&euro; 2)</span><br>
+							<span class="extrainfo informatief">(geb. 2004-2006)</span>
+					</div>
+					<div class="runCategory">
+						13.50 u.: Rolstoelrace <span class="price">(&euro; 1)</span><br>
+							<span class="extrainfo informatief">(recreatieve rolstoelrace voor alle niet gemotoriseerde rolstoelen)</span>
+					</div>
+					<div class="runCategory">
+						14.20 u.: Handbikerace <span class="price">(&euro; 3)</span>
+					</div>
+					<div class="runCategory">
+						15.00 u.: 5km <span class="price">(&euro; 5 vvk, &euro; 6 adk)</span>
+					</div>
+					<div class="runCategory">
+						13.20 u.: Kids Run 2 <span class="price">(&euro; 7vvk, &euro;8 adk)</span><br>
+							<span class="extrainfo bedrijvenklassement">(incl. bedrijvenklassement)</span>
+					</div>
+					<div class="opbrengst">
+						<img src="img/profit.png" />Opbrengst gaat integraal naar BOKS<img src="img/profit.png" />
+					</div>
+				</div>				
+			</div>
+			<div class="col-md-4 col">
+				<div class="rechts">
+					<div class="locatie">
+						<img src="img/map.png" /><br />
+						<div class="info-header">Locatie</div>
+						Voetbalvelden KSK Kallo<br />
+						Kapeldijkstraat Beveren
+					</div>
+					<div class="animatie">
+						<img src="img/animation.png" /><br />
+						<div class="info-header">Animatie</div>
+						Kinderanimatie voorzien
+					</div>
+					<div class="parking">
+						<img src="img/parking.png" /><br />
+						<div class="info-header">Parking</div>
+						Gehandicaptenparking voorzien
+					</div>
+					<div class="inschrijven">
+						<img src="img/enter.png" /><br />
+						<div class="info-header">Inschrijven</div>
+						<a href="#" ng-click="open();">Klik hier</a>
+						of via <a href="mailto:boksrun@outlook.com">boksrun@outlook.com</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script src="js/angular.min.js"></script>
 	<script src="js/angular-route.min.js"></script>
 	<script src="js/angular-material-icons.min.js"></script>
-	<script src="js/ui-bootstrap-0.13.0.js"></script>
-	<script src="js/ui-bootstrap-tpls-0.13.0.js"></script>
+	<script src="js/ui-bootstrap-min.js"></script>
+	<script src="js/ui-bootstrap-custom-tpls-1.2.1.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/RegistrationController.js"></script>
+	<script src="js/RegistrationService.js"></script>	
 	<script src="js/RunnerController.js"></script>
 	<script src="js/RunnerService.js"></script>
 </body>

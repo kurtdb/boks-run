@@ -1,83 +1,61 @@
-@CHARSET "UTF-8";
-
-html {
-	background: url(../img/background_2.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+.content {
+	color: #365c44;
 }
 
-.center {
-	position: absolute;
-	width: 400px;
-	height: 700px;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto;
-} 
-
-.topcorner{
-   position:absolute;
-   top:0;
-   right:0;
-  }
-
-.form-control {
-	border-radius: 0;
-	border: none;
-	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-	font-weight: 300;
+.links {
+  border-right: 1px solid #000;
+  font-size: 200%;
 }
 
-.btn.btn-primary {
-	background-color: #3b8ced;
-	border: #3b8ced;
-	-webkit-transition: all 0.1s;
-	-moz-transition: all 0.1s;
-	transition: all 0.1s;
-	-webkit-box-shadow: 0 5px 0 0 #1862BA;
-	-moz-box-shadow: 0 5px 0 0 #1862BA;
-	box-shadow: 0 5px 0 0 #1862BA;
+.runs {
+	font-size: 400%;
+	border-bottom: 2px solid #365c44;
+	width: 350px;
+	padding-bottom: 1px;
+	height: 150px;
+	margin-bottom: 20px;
 }
 
-.btn.btn-primary:focus {
-	outline: none;
+.text-center {
+	float: none;
+	margin: 0 auto;
+	font-size: 400%;
+	border:	2px solid #dcc800;
+	width: 350px;
 }
 
-.btn.btn-primary:active {
-	-webkit-box-shadow: 0 2px 0 0 #1862BA;
-	-moz-box-shadow: 0 2px 0 0 #1862BA;
-	box-shadow: 0 2px 0 0 #1862BA;
-	margin-top: 3px;
-	margin-bottom: -3px;
+.price {
+	color: #b6beb8;
 }
 
-.link.bg-primary {
-	background: #3b8ced;
-	padding: 0.5em;
+.extrainfo {
+	color: #dcc800;
 }
 
-/* Fix for Bootstrap 3 with Angular UI Bootstrap */
-
-.modal { 
-	display: block;
+.info-header {
+	font-size: 200%;
+	color: #dcc800;
 }
 
-/* Custom dialog/modal headers */
+.informatief {
+	margin-left: 30px;
+}
 
-.dialog-header-error { background-color: #d2322d; }
-.dialog-header-wait { background-color: #428bca; }
-.dialog-header-notify { background-color: #eeeeee; }
-.dialog-header-confirm { background-color: #333333; }
-	.dialog-header-error span, .dialog-header-error h4,
-	.dialog-header-wait span, .dialog-header-wait h4,
-	.dialog-header-confirm span, .dialog-header-confirm h4 { color: #ffffff; }
+.bedrijvenklassement {
+	margin-left: 30px;
+	color: #365c44 !important;
+}
 
-/* Ease Display */
+.opbrengst {
+	margin-top: 20px;
+}
 
-.pad { padding: 25px; }
+.form-checkbox {
+	margin-left: 10px;
+}
+
+#category {
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;	
+}

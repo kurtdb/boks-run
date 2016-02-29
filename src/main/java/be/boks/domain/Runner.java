@@ -42,6 +42,10 @@ public class Runner implements Serializable {
 	
 	private String type = "runner";
 	
+	private boolean boksLid;
+	
+	private boolean stofwisselingsZiekte;
+	
 	public Long getId() {
 		return id;
 	}
@@ -148,6 +152,22 @@ public class Runner implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public boolean isBoksLid() {
+		return boksLid;
+	}
+
+	public void setBoksLid(boolean boksLid) {
+		this.boksLid = boksLid;
+	}
+
+	public boolean isStofwisselingsZiekte() {
+		return stofwisselingsZiekte;
+	}
+
+	public void setStofwisselingsZiekte(boolean stofwisselingsZiekte) {
+		this.stofwisselingsZiekte = stofwisselingsZiekte;
 	}
 
 	@Override

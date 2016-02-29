@@ -1,0 +1,64 @@
+			<div>	
+				<h1>Registreer.</h1>
+		
+					<form class="form-horizontal">
+						<span>
+							<input class="form-control input-md" id="firstname" data-ng-model="firstname" placeholder="Voornaam" />
+						</span>
+						<span>
+							<input class="form-control input-md" id="name" data-ng-model="name" placeholder="Naam" />
+						</span>
+						<span>
+							<input class="form-control input-md" id="street" data-ng-model="street" placeholder="Straatnaam en huisnummer" />
+						</span>
+						<span>
+							<input class="form-control input-md" id="town" data-ng-model="town" placeholder="Gemeente" />
+						</span>
+						<span>
+							<select class="form-control input-md" id="gender" data-ng-model="gender">
+								<option value="" disabled selected>Geslacht</option>
+								<option value="MAN">Man</option>
+								<option value="VROUW">Vrouw</option>
+							</select>
+						</span>
+						<span>
+							<select class="form-control input-md" id="category" data-ng-model="category" multiple="multiple">
+								<option value="" disabled selected>Categorie</option>
+								<option value="kids_run_1">Kids run 1</option>
+								<option value="kids_run_2">Kids run 2</option>
+								<option value="rolstoelrace">Rolstoelrace</option>
+								<option value="handbikerace">Handbike race</option>
+								<option value="5km">5km</option>
+								<option value="10km">10km</option>
+							</select>
+						</span> 
+						<span>
+							<input class="form-control input-md" id="club" data-ng-model="club" placeholder="Loopclub" />
+						</span> 
+						<span>
+							<input class="form-control input-md" id="age" data-ng-model="age" placeholder="Leeftijd" />
+						</span> 
+						<span>
+							<input class="form-control input-md" id="email" data-ng-model="email" placeholder="E-mail adres" />
+						</span> 
+						<div class="checkbox form-checkbox">
+							<label><input id="boksLid" data-ng-model="boksLid" type="checkbox">Boks lid</label> 
+						</div>
+						<div class="checkbox form-checkbox">
+							<label><input id="stofwisselingsZiekte" data-ng-model="stofwisselingsZiekte" type="checkbox">Stofwisselingsziekte</label>
+						</div>
+		
+						<button class="btn btn-block btn-primary btn-md"
+							data-ng-click="create(firstname, name, street, town, gender, club, age, email, category, boksLid, stofwisselingsZiekte)">
+							<span data-ng-hide="saving">Registreren</span> <i
+								class="fa fa-spinner fa-spin" data-ng-show="saving"></i>
+						</button>
+						<button class="btn btn-block btn-primary btn-md" data-ng-click="annuleer();">
+							<span>Annuleren</span>
+						</button>
+					</form>
+		
+					<div class="{{class}}" data-ng-cloak="" data-ng-show="result">
+						{{result}}
+					</div>
+				</div>
