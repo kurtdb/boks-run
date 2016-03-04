@@ -7,9 +7,12 @@ import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ektorp.support.CouchDbDocument;
+import org.ektorp.support.TypeDiscriminator;
 import org.springframework.data.annotation.Id;
 
-public class Runner implements Serializable {
+@TypeDiscriminator("doc.type == 'runner'")
+public class Runner extends CouchDbDocument {
 	
 	private static final long serialVersionUID = 2530453437671327658L;
 
@@ -32,7 +35,7 @@ public class Runner implements Serializable {
 	
 	private Club runningClub;
 	
-	private List<Category> categories;
+	private List<String> categories;
 	
 	private String emailAddress;
 	
@@ -45,10 +48,6 @@ public class Runner implements Serializable {
 	private boolean boksLid;
 	
 	private boolean stofwisselingsZiekte;
-	
-	public Long getId() {
-		return id;
-	}
 	
 	public String getFirstName() {
 		return firstName;
@@ -114,11 +113,11 @@ public class Runner implements Serializable {
 		this.runningClub = runningClub;
 	}
 	
-	public List<Category> getCategories() {
+	public List<String> getCategories() {
 		return categories;
 	}
 	
-	public void setCategories(List<Category> category) {
+	public void setCategories(List<String> category) {
 		this.categories = category;
 	}
 

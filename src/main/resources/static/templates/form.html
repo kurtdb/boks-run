@@ -36,7 +36,7 @@
 							<input class="form-control input-md" id="club" data-ng-model="club" placeholder="Loopclub" />
 						</span> 
 						<span>
-							<input class="form-control input-md" id="age" data-ng-model="age" placeholder="Leeftijd" />
+							<input type="text" class="form-control" placeholder="Leeftijd" uib-datepicker-popup="dd-MM-yyyy" ng-model="age" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open1()" />					
 						</span> 
 						<span>
 							<input class="form-control input-md" id="email" data-ng-model="email" placeholder="E-mail adres" />
@@ -48,14 +48,16 @@
 							<label><input id="stofwisselingsZiekte" data-ng-model="stofwisselingsZiekte" type="checkbox">Stofwisselingsziekte</label>
 						</div>
 		
-						<button class="btn btn-block btn-primary btn-md"
-							data-ng-click="create(firstname, name, street, town, gender, club, age, email, category, boksLid, stofwisselingsZiekte)">
-							<span data-ng-hide="saving">Registreren</span> <i
-								class="fa fa-spinner fa-spin" data-ng-show="saving"></i>
-						</button>
-						<button class="btn btn-block btn-primary btn-md" data-ng-click="annuleer();">
-							<span>Annuleren</span>
-						</button>
+						<div class="button-center">
+							<button class="btn btn-primary btn-md form-button"
+								data-ng-click="create(firstname, name, street, town, gender, club, age, email, category, boksLid, stofwisselingsZiekte)">
+								<span data-ng-hide="saving">Registreren</span> <i
+									class="fa fa-spinner fa-spin" data-ng-show="saving"></i>
+							</button>
+							<button class="btn btn-primary btn-md form-button" data-ng-click="annuleer();">
+								<span>Annuleren</span>
+							</button>
+						</div>
 					</form>
 		
 					<div class="{{class}}" data-ng-cloak="" data-ng-show="result">
