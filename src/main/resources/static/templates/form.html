@@ -1,62 +1,90 @@
-			<div>	
-				<h1>Registreer.</h1>
-		
-					<form class="form-horizontal">
-						<span>
-							<input class="form-control input-md" id="firstname" data-ng-model="firstname" placeholder="Voornaam" />
-						</span>
-						<span>
-							<input class="form-control input-md" id="name" data-ng-model="name" placeholder="Naam" />
-						</span>
-						<span>
-							<input class="form-control input-md" id="street" data-ng-model="street" placeholder="Straatnaam en huisnummer" />
-						</span>
-						<span>
-							<input class="form-control input-md" id="town" data-ng-model="town" placeholder="Gemeente" />
-						</span>
-						<span>
-							<select class="form-control input-md" id="gender" data-ng-model="gender">
-								<option value="" disabled selected>Geslacht</option>
-								<option value="MAN">Man</option>
-								<option value="VROUW">Vrouw</option>
-							</select>
-						</span>
-						<span>
-							<select class="form-control input-md" id="category" data-ng-model="category" multiple="multiple">
-								<option value="" disabled selected>Categorie</option>
-								<option value="kids_run_1">Kids run 1</option>
-								<option value="kids_run_2">Kids run 2</option>
-								<option value="rolstoelrace">Rolstoelrace</option>
-								<option value="handbikerace">Handbike race</option>
-								<option value="5km">5km</option>
-								<option value="10km">10km</option>
-							</select>
-						</span> 
-						<span>
-							<input class="form-control input-md" id="club" data-ng-model="club" placeholder="Loopclub" />
-						</span> 
-						<span>
-							<input type="text" class="form-control" placeholder="Leeftijd" uib-datepicker-popup="dd-MM-yyyy" ng-model="age" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" ng-click="open1()" />					
-						</span> 
-						<span>
-							<input class="form-control input-md" id="email" data-ng-model="email" placeholder="E-mail adres" />
-						</span> 
-						<div class="checkbox form-checkbox">
-							<label><input id="boksLid" data-ng-model="boksLid" type="checkbox">Boks lid</label> 
+			<div>
+				<div class="modal-header">
+					<h1>Registreer.</h1>
+				</div>	
+				<form name="registrationForm" novalidate>
+					<div class="modal-body">
+							<p>
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.firstname.$touched">
+								  <span class="error" ng-show="registrationForm.firstname.$error.required">Voornaam is vereist!</span>
+								</p>								
+								<input class="form-control input-md" id="firstname" name="firstname" data-ng-model="firstname" placeholder="Voornaam" required />
+							</p>
+							<p>						
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.name.$touched">
+								  <span class="error" ng-show="registrationForm.name.$error.required">Familienaam is vereist!</span>
+								</p>
+								<input class="form-control input-md" id="name" data-ng-model="name" name="name" placeholder="Naam" required />
+							</p>
+							<p>
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.street.$touched">
+								  <span class="error" ng-show="registrationForm.street.$error.required">Straat en huisnummer zijn vereist!</span>
+								</p>							
+								<input class="form-control input-md" id="street" data-ng-model="street" name="street" placeholder="Straatnaam en huisnummer" required />
+							</p>
+							<p>
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.town.$touched">
+								  <span class="error" ng-show="registrationForm.town.$error.required">Gemeente is vereist!</span>
+								</p>							
+								<input class="form-control input-md" id="town" data-ng-model="town" name="town" placeholder="Gemeente" required />
+							</p>
+							<p>
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.gender.$touched">
+								  <span class="error" ng-show="registrationForm.gender.$error.required">Geslacht is vereist!</span>
+								</p>							
+								<select class="form-control input-md" id="gender" data-ng-model="gender" name="gender" required>
+									<option value="" disabled selected>Geslacht</option>
+									<option value="MAN">Man</option>
+									<option value="VROUW">Vrouw</option>
+								</select>
+							</p>
+							<p>
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.category.$touched">
+								  <span class="error" ng-show="registrationForm.category.$error.required">Categorie is vereist!</span>
+								</p>							
+								<select class="form-control input-md" id="category" data-ng-model="category" name="category" multiple="multiple" required>
+									<option value="" disabled selected>Categorie</option>
+									<option value="kids_run_1">Kids run 1</option>
+									<option value="kids_run_2">Kids run 2</option>
+									<option value="rolstoelrace">Rolstoelrace</option>
+									<option value="handbikerace">Handbike race</option>
+									<option value="5km">5km</option>
+									<option value="10km">10km</option>
+								</select>
+							</p> 
+							<p>
+								<input class="form-control input-md" id="club" data-ng-model="club" placeholder="Loopclub" />
+							</p> 
+							<p>
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.birthday.$touched">
+								  <span class="error" ng-show="registrationForm.birthday.$error.required">Geboortedatum is vereist!</span>
+								</p>							
+								<input type="text" class="form-control input-md" placeholder="Geboortedatum" name="birthday" id="birthday" data-ng-model="birthday" required />					
+							</p> 
+							<p>
+								<p role="alert" ng-show="registrationForm.$submitted || registrationForm.email.$touched">
+								  <span class="error" ng-show="registrationForm.email.$error.required">E-mail adres is vereist!</span>
+								</p>							
+								<input class="form-control input-md" id="email" data-ng-model="email" name="email" type="email" placeholder="E-mail adres" required />
+							</p> 
+							<div class="checkbox form-checkbox">
+								<label><input id="boksLid" data-ng-model="boksLid" type="checkbox">Boks lid</label> 
+							</div>
+							<div class="checkbox form-checkbox">
+								<label><input id="stofwisselingsZiekte" data-ng-model="stofwisselingsZiekte" type="checkbox">Stofwisselingsziekte</label>
+							</div>
 						</div>
-						<div class="checkbox form-checkbox">
-							<label><input id="stofwisselingsZiekte" data-ng-model="stofwisselingsZiekte" type="checkbox">Stofwisselingsziekte</label>
-						</div>
-		
-						<div class="button-center">
-							<button class="btn btn-primary btn-md form-button"
-								data-ng-click="create(firstname, name, street, town, gender, club, age, email, category, boksLid, stofwisselingsZiekte)">
-								<span data-ng-hide="saving">Registreren</span> <i
-									class="fa fa-spinner fa-spin" data-ng-show="saving"></i>
-							</button>
-							<button class="btn btn-primary btn-md form-button" data-ng-click="annuleer();">
-								<span>Annuleren</span>
-							</button>
+						<div class="modal-footer">	
+							<div class="button-center">
+								<button class="btn btn-primary btn-md form-button"
+									data-ng-click="create(firstname, name, street, town, gender, club, age, email, category, boksLid, stofwisselingsZiekte)">
+									<span data-ng-hide="saving">Registreren</span> <i
+										class="fa fa-spinner fa-spin" data-ng-show="saving"></i>
+								</button>
+								<button class="btn btn-primary btn-md form-button" data-ng-click="annuleer();">
+									<span>Annuleren</span>
+								</button>
+							</div>
 						</div>
 					</form>
 		
@@ -64,3 +92,4 @@
 						{{result}}
 					</div>
 				</div>
+			</div>

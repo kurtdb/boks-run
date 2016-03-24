@@ -16,7 +16,7 @@
 							$scope.openDialog =  $uibModal.open({
 								templateUrl : 'templates/form.html',
 								controller: 'RegistrationController',
-								size : 'lg'
+								size : 'md'
 							});
 						}
 						

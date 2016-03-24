@@ -1,6 +1,5 @@
 package be.boks.domain;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class Runner extends CouchDbDocument {
 	
 	private String lastName;
 	
-	private Integer age;
+	private LocalDate birthday;
 	
 	private LocalDate entryDate;
 	
@@ -49,6 +48,10 @@ public class Runner extends CouchDbDocument {
 	
 	private boolean stofwisselingsZiekte;
 	
+	private boolean bedrijvenKlassement;
+	
+	private String bedrijf;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -65,12 +68,12 @@ public class Runner extends CouchDbDocument {
 		this.lastName = lastName;
 	}
 	
-	public Integer getAge() {
-		return age;
+	public LocalDate getBirthday() {
+		return birthday;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setBirthday(LocalDate birthday) {
+		this.birthday = birthday;
 	}
 
 	public LocalDate getEntryDate() {
@@ -169,13 +172,29 @@ public class Runner extends CouchDbDocument {
 		this.stofwisselingsZiekte = stofwisselingsZiekte;
 	}
 
+	public boolean isBedrijvenKlassement() {
+		return bedrijvenKlassement;
+	}
+
+	public void setBedrijvenKlassement(boolean bedrijvenKlassement) {
+		this.bedrijvenKlassement = bedrijvenKlassement;
+	}
+
+	public String getBedrijf() {
+		return bedrijf;
+	}
+
+	public void setBedrijf(String bedrijf) {
+		this.bedrijf = bedrijf;
+	}
+
 	@Override
 	public int hashCode() {
 		HashCodeBuilder builder = new HashCodeBuilder();
 		builder.append(this.address);
 		builder.append(this.categories);
 		builder.append(this.city);
-		builder.append(this.age);
+		builder.append(this.birthday);
 		builder.append(this.emailAddress);
 		builder.append(this.entryDate);
 		builder.append(this.firstName);
@@ -195,7 +214,7 @@ public class Runner extends CouchDbDocument {
 			builder.append(this.address, runner.address);
 			builder.append(this.categories, runner.categories);
 			builder.append(this.city, runner.city);
-			builder.append(this.age, runner.age);
+			builder.append(this.birthday, runner.birthday);
 			builder.append(this.emailAddress, runner.emailAddress);
 			builder.append(this.entryDate, runner.entryDate);
 			builder.append(this.firstName, runner.firstName);
@@ -215,7 +234,7 @@ public class Runner extends CouchDbDocument {
 		builder.append("address", this.address);
 		builder.append("category", this.categories);
 		builder.append("city", this.city);
-		builder.append("dateOfBirth", this.age);
+		builder.append("dateOfBirth", this.birthday);
 		builder.append("emailAddress", this.emailAddress);
 		builder.append("entryDate", this.entryDate);
 		builder.append("firstName", this.firstName);
